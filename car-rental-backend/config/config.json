@@ -1,9 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": "faizanshaikh",
-    "database": "carrental",
-    "host": "127.0.0.1",
+    "username": "sql12720894",
+    "password": "A8ywNCi46I",
+    "database": "sql12720894",
+    "host": "sql12.freesqldatabase.com",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -11,13 +12,15 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "sql12720894",
+    "password": "A8ywNCi46I",
+    "database": "sql12720894",
+    "host": "sql12.freesqldatabase.com",
+    "port": 3306,
     "dialect": "mysql"
   }
 }

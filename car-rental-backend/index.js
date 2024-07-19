@@ -1,8 +1,9 @@
 const express = require("express");
 const db = require("./models/index");
 const vehiclerouter = require("./routes/vehicle");
+const cors= require('cors')
 const app = express();
-
+app.use(cors())
 app.use(express.json());
 
 app.use("/vehicle",vehiclerouter)

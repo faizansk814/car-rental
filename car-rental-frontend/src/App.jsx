@@ -18,7 +18,7 @@ const App = () => {
 
   useEffect(() => {
     if (numWheels) {
-      axios.post('http://localhost:4031/vehicle/vehicle-types', { num_wheels: numWheels })
+      axios.post('https://car-rental-k8ox.onrender.com/vehicle/vehicle-types', { num_wheels: numWheels })
         .then(response => {
           setVehicleTypes(response.data);
         })
@@ -30,7 +30,7 @@ const App = () => {
 
   useEffect(() => {
     if (selectedType) {
-      axios.post('http://localhost:4031/vehicle/vehicles-by-type', { type: selectedType })
+      axios.post('https://car-rental-k8ox.onrender.com/vehicle/vehicles-by-type', { type: selectedType })
         .then(response => {
           setVehicles(response.data);
         })
@@ -68,7 +68,7 @@ const App = () => {
       }
 
       // Submit the form
-      axios.post('http://localhost:4031/vehicle/book-vehicle', {
+      axios.post('https://car-rental-k8ox.onrender.com/vehicle/book-vehicle', {
         vehicleId: selectedVehicle,
         startDate: formatDate(startDate),
         endDate: formatDate(endDate)

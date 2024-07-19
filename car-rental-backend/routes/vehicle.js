@@ -1,5 +1,5 @@
 const express = require("express");
-const { Vehicle } = require("../models");
+const { Vehicle , BookVehicle, Sequelize } = require("../models");
 const vehiclerouter = express.Router();
 
 // API to create a new vehicle
@@ -34,5 +34,34 @@ vehiclerouter.post("/vehicle-types", async (req, res) => {
     res.status(400).json({ error: error.message });
   }
 });
+
+vehiclerouter.post('/book-vehicle', async (req, res) => {
+    try {
+      const { vehicleId, startDate, endDate } = req.body;
+  
+      // Check if the vehicle is already booked
+      const existingBooking = await BookVehicle.findOne({
+        where: {
+          vehicleId,
+          startDate: {
+            [Sequelize.Op.lte]: endDate,
+          },
+          endDate: {
+            [Sequelize.Op.gte]: startDate,
+          },
+        },
+      });
+  
+      if (existingBooking) {
+        return res.status(400).json({ message: 'Vehicle is already booked for the selected dates' });
+      }
+  
+      // Create a new booking
+      const booking = await BookVehicle.create({ vehicleId, startDate, endDate });
+      res.status(201).json(booking);
+    } catch (error) {
+      res.status(400).json({ error: error.message });
+    }
+  });
 
 module.exports = vehiclerouter;

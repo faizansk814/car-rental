@@ -2,7 +2,7 @@
 
 This project is a car rental application featuring a frontend built with React.js and a backend implemented with Node.js. The application allows users to book vehicles based on the number of wheels, type of vehicle, and available dates.
 
-## Prerequisites
+## Prerequisites for backend
 
 Before you begin, ensure you have met the following requirements:
 
@@ -36,7 +36,7 @@ Follow these steps to set up and run the application locally:
 
 The backend server will be available at http://localhost:4031 by default.
 
-# Car Rental Application - Frontend
+# Car Rental Frontend
 
 This is the frontend of the Car Rental Application, built with React.js. The frontend allows users to interact with the car rental service by providing a user-friendly interface for booking vehicles.
 
